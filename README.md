@@ -20,10 +20,11 @@ The agent has a number of features:
 **Draining** - 
 In addition to auto-balancing, there would also be a function to allow a node to be set to
 a 'draining' state which would move any migratable VMs off the host within the next minutes 
-(or perhaps tens of minutes on a busy host. This could be used most obviously for node 
-maintance. When a node is no longer running any workloads, it can be safely removed.
-After a node is returned to service and `draining=false` set, workloads would begin
-migrating back from peer nodes, due to it having far more free resources than the other nodes.
+(or perhaps tens of minutes on a busy host), and of course stop any incoming requests for
+migration on to the host. This could be used most obviously for node maintance. When a node 
+is no longer running any workloads, it can be safely removed. After a node is returned to 
+service and `draining=false` set, workloads would begin migrating back from peer nodes, 
+due to it having far more free resources than the other nodes.
 
 With this functionality, zero-downtime node removals are not only possible, but nearly automated,
 with three steps:
